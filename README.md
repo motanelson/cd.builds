@@ -1,2 +1,2 @@
-# vba.power.point
-power point macro to load text slides by | char 
+# command.shell
+command shell from a exel page 

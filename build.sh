@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 aaa=$1
 cp app.data ./tmp/$aaa.iso
-/usr/bin/x86_64-linux-gnu-gcc -c -nostdlib ./uploads/$aaa.c -o /tmp/$aaa.o
+/usr/bin/x86_64-linux-gnu-gcc -c -m64 -nostdlib ./uploads/$aaa.c -o /tmp/$aaa.o
 /usr/bin/x86_64-linux-gnu-ld -nostdlib -T ./link.ld /tmp/boot.o /tmp/$aaa.o  -o /tmp/a$aaa.bin 
 /usr/bin/x86_64-linux-gnu-objcopy /tmp/a$aaa.bin /tmp/$aaa.c32  --output-target binary 
 cat /tmp/mysys.o /tmp/$aaa.c32 > /tmp/$aaa.bin
